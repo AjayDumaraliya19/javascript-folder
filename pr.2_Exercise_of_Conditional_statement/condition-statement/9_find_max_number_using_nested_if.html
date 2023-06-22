@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .main {
+            text-align: center;
+        }
+
+        h1 {
+            text-decoration: underline;
+        }
+
+        .main #enterNumber {
+            font-size: 48px;
+            font-weight: 700;
+            color: coral;
+        }
+
+        .main #number {
+            font-size: 58px;
+            font-weight: 700;
+            color: rgb(107, 250, 75);
+            background-color: blue;
+            border-radius: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div class="main">
+        <h1>JavaScript program to find which number is greter in 4 numbers using ledder if else.</h1>
+        <div id="enterNumber"></div>
+        <div id="number"></div>
+    </div>
+
+
+
+    <script>
+        let text;
+        let a = prompt('Enter number A :');
+        let b = prompt('Enter number B :');
+        let c = prompt('Enter number C :');
+        let d = prompt('Enter number D :');
+
+        document.getElementById('enterNumber').innerHTML = 'A = ' + a + ' , B = ' + b + ' , C = ' + c + ' , D = ' + d
+
+        if (a > b) {
+            if (a > c) {
+                if (a > d) {
+                    text = 'A is max number.';
+                } else {
+                    text = 'D is max number.';
+                }
+            } else if (c > d) {
+                text = 'c is max number.';
+            } else {
+                text = 'D is max number.';
+            }
+        } else if (b > c) {
+            if (b > d) {
+                text = 'B is max number.';
+            } else {
+                text = 'D is max number.';
+            }
+        } else if (c > d) {
+            text = 'C is max number.';
+        } else {
+            text = 'D is max number.';
+        }
+
+        document.getElementById('number').innerHTML = text;
+    </script>
+
+</body>
+
+</html>

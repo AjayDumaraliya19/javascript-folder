@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating oops concept</title>
+</head>
+
+<body>
+    <h1>Creating oops concept</h1>
+    <p id="demo"></p>
+
+    <script>
+        //constructor function for Person object
+        function Person(fname, lname, age, eye) {
+            this.firstName = fname;
+            this.lastName = lname;
+            this.age = age;
+            this.eyeColor = eye;
+        }
+
+        //Create 2 person objects
+        const myFather = new Person(`Ajay`, `Dumaraliya`, `23`, `Black`);
+
+        //Add nationality to first object
+        myFather.nationality = "English.";
+
+        //display nationality
+        document.getElementById(`demo`).innerHTML = "My father is " + myFather.nationality;
+    </script>
+</body>
+
+</html>

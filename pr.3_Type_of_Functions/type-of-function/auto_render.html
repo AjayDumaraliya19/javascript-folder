@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-call render function</title>
+
+    <style>
+        .main{
+            text-align: center;
+            justify-content: center;
+        }
+        h1 {
+            font-size: 48px;
+            color: coral;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <h1 id="demo"></h1>
+    </div>
+
+    <script>
+        function myFunction() {
+            var a = prompt(`Enter the value of A : `);
+            var b = prompt(`Enter the value of B : `);
+            var c = prompt(
+                `What you want Sumation(Enter + sign), Subtraction(Enter - sign), Multiplication(Enter * sign), division(Enter / sign) :`
+            );
+
+            var text;
+
+            if (c == '+') {
+                var sum = a + b;
+                text = `Sumation of A and B is :` + `<br>` + `A + B = ` + sum;
+            } else if (c == '-') {
+                var sub = a - b;
+                text = `Subtraction of A and B is :` + `<br>` + `A - B = ` + sub;
+            } else if (c == '*') {
+                var mul = a * b;
+                text = `Multiplication of A and B is :` + `<br>` + `A * B = ` + mul;
+            } else if (c == '/') {
+                var div = a / b;
+                text = `Division of A and B is :` + `<br>` + `A / B = ` + div;
+            } else {
+                text = `Please Enter valid sign..!`
+            }
+
+            document.getElementById(`demo`).innerHTML = text;
+        }
+
+        myFunction();
+    </script>
+</body>
+
+</html>

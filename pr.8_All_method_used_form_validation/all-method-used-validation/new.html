@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Form</title>
+</head>
+<body>
+  <h1>Event Form</h1>
+  <form id="eventForm">
+    <label for="eventName">Event Name:</label>
+    <input type="text" id="eventName" required>
+    <br>
+    <label for="eventDate">Event Date:</label>
+    <input type="date" id="eventDate" required>
+    <br>
+    <button type="submit">Add Event</button>
+  </form>
+  <div id="eventList"></div>
+
+  <script>
+    // Retrieve stored events from localStorage
+    const storedEvents = JSON.parse(localStorage.getItem('events')) || [];
+
+    // Function to save events to localStorage
+    const saveEventsToLocalStorage = () => {
+      localStorage.setItem('events', JSON.stringify(storedEvents));
+    };
+
+    // Function to display events
+    const displayEvents = () => {
+      const eventList = document.getElementById('eventList');
+      eventList.innerHTML = '';
+      storedEvents.map((event, index) => {
+        const eventItem = document.createElement('div');
+        eventItem.innerHTML = `
+          <p>Event: ${event.name}</p>
+          <p>Date: ${event.date}</p>
+          <button class="removeBtn" data-index="${index}">Remove</button>
+          <button class="updateBtn" data-index="${index}">Update</button>
+        `;
+        eventList.appendChild(eventItem);
+      });
+    };
+
+    // Function to handle form submission
+    const addEvent = (event) => {
+      event.preventDefault();
+      const eventNameInput = document.getElementById('eventName');
+      const eventDateInput = document.getElementById('eventDate');
+      const name = eventNameInput.value;
+      const date = eventDateInput.value;
+
+      storedEvents.push({ name, date });
+      saveEventsToLocalStorage();
+      displayEvents();
+
+      eventNameInput.value = '';
+      eventDateInput.value = '';
+    };
+
+    // Function to remove an event
+    const removeEvent = (index) => {
+      storedEvents.splice(index, 1);
+      saveEventsToLocalStorage();
+      displayEvents();
+    };
+
+    // Function to update an event
+    const updateEvent = (index) => {
+      const newEventName = prompt('Enter the updated event name:');
+      const newEventDate = prompt('Enter the updated event date:');
+      storedEvents[index] = { name: newEventName, date: newEventDate };
+      saveEventsToLocalStorage();
+      displayEvents();
+    };
+
+    // Function to clear all events from localStorage
+    const clearEvents = () => {
+      storedEvents.length = 0;
+      localStorage.removeItem('events');
+      displayEvents();
+    };
+
+    // Add event listener to the form
+    const eventForm = document.getElementById('eventForm');
+    eventForm.addEventListener('submit', addEvent);
+
+    // Add event listener to the remove buttons
+    const eventList = document.getElementById('eventList');
+    eventList.addEventListener('click', (event) => {
+      if (event.target.classList.contains('removeBtn')) {
+        const index = event.target.dataset.index;
+        removeEvent(index);
+      } else if (event.target.classList.contains('updateBtn')) {
+        const index = event.target.dataset.index;
+        updateEvent(index);
+      }
+    });
+
+    // Display stored events on page load
+    displayEvents();
+  </script>
+</body>
+</html>

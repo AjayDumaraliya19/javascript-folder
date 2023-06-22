@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested if-else statement</title>
+</head>
+<style>
+    .main {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    button {
+        margin: 20px auto;
+        width: 200px;
+        font-size: 34px;
+        font-weight: 600;
+        background: #000;
+        color: #fff;
+        border: 2px solid #353232;
+        border-radius: 10px;
+        transition: 0.2s all ease-in-out;
+    }
+
+    button:hover {
+        background: #3a3636;
+        border-color: #0c0c0c;
+    }
+
+    span {
+        font-size: 28px;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <span>Find bigest number between three numbers</span>
+        <button onclick="myFunction()">Click here</button>
+        <h1 id="demo"></h1>
+    </div>
+    <script>
+        function myFunction() {
+            let a = parseInt(prompt(`Enter your first number A : `));
+            let b = parseInt(prompt(`Enter your second number B : `));
+            let c = parseInt(prompt(`Enter your third number C : `));
+            let text = "";
+
+            if (a > b) {
+                if (a > c) {
+                    text = `Your first number A = ${a} is big.` + `<br>` + `B=${b} and C=${c}`;
+                    document.getElementById(`demo`).innerHTML = text;
+                } else {
+                    text = `Your third number C = ${c} is big.` + `<br>` + `A=${a} and B=${b}`;
+                    document.getElementById(`demo`).innerHTML = text;
+                }
+            } else if (b > c) {
+                text = `Your second number B = ${b} is big.` + `<br>` + `A=${a} and C=${c}`;
+                document.getElementById(`demo`).innerHTML = text;
+            } else {
+                text = `Your third number C = ${c} is big.` + `<br>` + `A=${a} and B=${b}`;
+                document.getElementById(`demo`).innerHTML = text;
+            }
+        }
+    </script>
+</body>
+
+</html>

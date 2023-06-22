@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find triangle area</title>
+
+    <style>
+        .main {
+            text-align: center;
+        }
+
+        button {
+            font-size: 38px;
+            background-color: #000;
+            color: #fff;
+            padding: 30px;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+
+        h1 {
+            text-decoration: underline;
+        }
+
+        #demo {
+            font-size: 48px;
+        }
+
+        #demo2 {
+            font-size: 48px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <button onclick="myFunction()">Click here</button>
+        <hr>
+        <h1>javascript Program to find Triangle area.</h1>
+        <span id="demo"></span>
+        <hr>
+        <h2 id="demo2"></h2>
+    </div>
+
+    <script>
+        function myFunction() {
+            const a = 0.5;
+            let base = parseInt(prompt(`Enter Triangle base : `));
+            let hight = parseInt(prompt(`Enter Triangle hight : `));
+
+            document.getElementById(`demo`).innerHTML = `Triangle base is ` + base + ` , Triangle base is ` + hight;
+
+            let area = a * base * hight;
+
+            document.getElementById(`demo2`).innerHTML = `Area of triangle is ` + area;
+        }
+    </script>
+</body>
+
+</html>

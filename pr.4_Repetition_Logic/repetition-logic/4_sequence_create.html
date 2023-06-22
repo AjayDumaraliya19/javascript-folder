@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create a sequence</title>
+
+    <style>
+        .main {
+            text-align: center;
+            justify-content: center;
+        }
+
+        p {
+            font-size: 48px;
+            text-decoration: underline;
+        }
+
+        h1 {
+            border: 2px solid coral;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Sequence Created</h1>
+        <button onclick="myFunction()">Clcik here using for loop</button>
+        <button onclick="myFunctionLoop()">Clcik here using while loop</button>
+    </div>
+
+        <script>
+            //for loop...
+            function myFunction() {
+                var num = prompt(`Enter the number : `);
+                document.write(`Sequence is...` + `<br>`);
+                for (var i = 0; i < num; i++) {
+                    var temp = 1;
+                    temp = Math.pow(2, i);
+                    document.write(`Base 2 Power of ${i} is 2^${i} : ` + temp + `<br>`);
+                }
+            }
+
+
+            //while loop...
+            function myFunctionLoop() {
+                num = prompt(`Enter the number : `);
+                document.write(`Sequence is...` + `<br>`);
+                let j = 0;
+                while (j < num) {
+                    var temp = j;
+                    temp = Math.pow(2, j);
+                    document.write(`Base 2 Power of ${j} is 2^${j} : ` + temp + `<br>`);
+                    j++;
+                }
+            }
+        </script>
+
+    </body>
+
+</html>

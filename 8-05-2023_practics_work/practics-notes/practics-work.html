@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .main {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 48px;
+        text-decoration: underline;
+        font-weight: 700;
+    }
+
+    button {
+        font-size: 38px;
+        font-weight: 700;
+        border: 2px solid #877d7dc2;
+        border-radius: 20px;
+        background: linear-gradient(45deg, #5018ff, #2eb816);
+        width: 200px;
+    }
+
+    p {
+        font-size: 48px;
+        text-decoration: underline;
+    }
+</style>
+
+<body>
+
+    <div class="main">
+        <h1>JavaScript program to find week day from first letter of it using if else if.</h1>
+        <button onclick="myFunction()">Try it</button>
+        <p id="demo">Good Evening!</p>
+    </div>
+    <script>
+        function myFunction() {
+            let day;
+            let text = prompt('enter any letter:');
+
+
+            if (text == "s" || text == "S") {
+                day = 'Sunday';
+            } else if (text == "m" || text == "M") {
+                day = 'Monday';
+            } else if (text == "T" || text == "t") {
+                day = 'Tuesday';
+            } else if (text == "w" || text == "W") {
+                day = 'Wendesday';
+            } else if (text == "TH" || text == "th") {
+                day = 'Thursday';
+            } else if (text == "f" || text == "F") {
+                day = 'Friday';
+            } else if (text == "Sa" || text == "sa") {
+                day = 'Saturday';
+            } else {
+                day = 'Please Enter valid leter.';
+            }
+
+
+            document.getElementById('demo').innerHTML = day;
+        }
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parameterized function [ with argument & without argument ]</title>
+
+    <style>
+        .main {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        button {
+            margin: 28px auto;
+            text-align: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #fff;
+            background: #000;
+            border-radius: 10px;
+        }
+
+        #noParameter,
+        #withParameter {
+            font-size: 38px;
+            color: coral;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <button onclick="noParameterFunction()">No parameter function</button>
+        <div id="noParameter"></div>
+        <button onclick="withParameterFunction(12, 10)">with parameter function</button>
+        <div id="withParameter"></div>
+    </div>
+    <script>
+        function noParameterFunction() {
+            var a = 10;
+            var b = 20;
+
+            document.getElementById(`noParameter`).innerHTML = `a = 10` + `<br>` + `b = 20` + `<br>` + `a * b = ` + (a *
+                b);
+        }
+
+        function withParameterFunction(x, y) {
+            document.getElementById(`withParameter`).innerHTML = (x * y);
+        }
+    </script>
+</body>
+
+</html>

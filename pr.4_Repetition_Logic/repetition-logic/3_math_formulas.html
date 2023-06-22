@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maths formulas use</title>
+
+</head>
+
+<body>
+    <h1>Maths formulas use</h1>
+    <div id="demo" style="font-size: 48px;
+    background: blue;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 25%;"> Base power of exponent is : result</div>
+    <br>
+    <br>
+    <button onclick="myFunction()">Clcik here</button>
+    
+
+
+    <script>
+        function myFunction(x, y) {
+            x = prompt(`Enter base : `);
+            y = prompt(`Enter exponent : `);
+            let z = Math.pow(x, y);
+            document.getElementById(`demo`).innerHTML = `${x} Power of ${y} is : ` + z;
+        }
+
+    </script>
+</body>
+
+</html>

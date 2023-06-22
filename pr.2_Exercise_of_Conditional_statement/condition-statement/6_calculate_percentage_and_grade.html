@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<style>
+    .main {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main h1 {
+        text-decoration: underline;
+    }
+
+    .main button {
+        margin-top: 1rem;
+        margin: 0 auto;
+        font-size: 28px;
+        font-weight: 900;
+        width: 100%;
+        max-width: 10rem;
+        color: #fff;
+        background-color: #000099;
+        border-radius: 40%;
+    }
+
+    .main #demo{
+        margin-top: 1rem;
+        color: coral;
+        font-size: 48px;
+        font-weight: 600;
+    }
+
+    .main #textPrint{
+        margin-top: 1rem;
+        color: blueviolet;
+        font-size: 48px;
+        font-weight: 600;
+    }
+</style>
+
+<body>
+
+    <div class="main">
+        <h1>Enter Given subject marks and calculate percentage and grade according to.</h1>
+        <button onclick="myFunction()">Click here</button>
+        <span id="demo"></span>
+        <span id="textPrint"></span>
+    </div>
+
+
+    <script>
+        function myFunction() {
+            let text;
+            let totalMarks;
+
+            let a = prompt("Enter Physics marks :");
+            let b = prompt("Enter Chemistry marks :");
+            let c = prompt("Enter Biology marks :");
+            let d = prompt("Enter Mathematics marks :");
+            let e = prompt("Enter Computer marks :");
+
+            totalMarks = (((parseInt(a) + parseInt(b) + parseInt(c) + parseInt(d) + parseInt(e)) * 100) / 500);
+            document.getElementById("demo").innerHTML = totalMarks + "%";
+
+            if (totalMarks >= 90) {
+                text = "You get an A grade";
+            } else if (totalMarks >= 80) {
+                text = "You get an B grade";
+            } else if (totalMarks >= 70) {
+                text = "You get an C grade";
+            } else if (totalMarks >= 60) {
+                text = "You get an D grade";
+            } else if (totalMarks >= 50) {
+                text = "You get an E grade";
+            } else if (totalMarks >= 33) {
+                text = "You get an F grade. ";
+            }else{
+                text = "You are fail. ";
+            }
+
+            document.getElementById("textPrint").innerHTML = text;
+
+        }
+    </script>
+
+
+</body>
+
+</html>

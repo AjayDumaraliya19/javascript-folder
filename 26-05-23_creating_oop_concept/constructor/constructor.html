@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor</title>
+</head>
+
+<body>
+    <h1>Constructor</h1>
+    <p>All details in console</p>
+
+    <script>
+        function studentd(name, std, age) {
+            // Using this keyword
+            this.Sname = name;
+            this.standard = std;
+            this.age = age;
+        }
+        const stu1 = new studentd("Ajay", "Web developer", 23); // Using new key word
+        const stu2 = new studentd("Mayur", "web designer", 25);
+        stu1.Id = 2770; // Add new key
+
+        console.log(stu1); // Full object get
+
+        console.log(stu1.Sname); // Particular value student name get
+        console.log(stu1.standard); // Particular value student standard get
+        console.log(stu1.age); // Particular value student age get
+
+        // Using for in array get object
+        let array = [{
+            id: 2020,
+            name: "Sunil",
+            age: 23
+        }, {
+            id: 2427,
+            name: "Kavin",
+            age: 25
+        }];
+
+        for (let x in array) {
+            console.log(array[x]);
+        }
+
+        // Create new object
+        const food = {
+            foodName: "Burger",
+            price: "125₹",
+            quality: "Good",
+            Extra: "Friends Fries free",
+            set availability(available) {
+                this.available = available;
+            }
+        };
+
+        // Set an object property using a setter
+        food.availability = "Yes";
+        console.log("Food Availability : " + food.available);
+
+        // Using for in object get
+        for (let key in food) {
+            console.log( /** "Food details : " + */ key + ": " + food[key]);
+        }
+
+        // Display daata from the object using a getter
+        const food2 = {
+            food: "Pizza",
+            price: "205₹",
+            quality: "Good",
+            available: "yes",
+            get foodDetails() {
+                return this.food + " = " + this.price;
+            }
+        }
+        console.log("Get Food details :", food2.foodDetails);
+    </script>
+</body>
+
+</html>

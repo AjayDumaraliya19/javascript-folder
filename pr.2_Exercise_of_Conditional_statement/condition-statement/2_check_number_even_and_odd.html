@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positive or nagative number check</title>
+</head>
+
+<body>
+    <div class="main" style="text-align: center; display: flex; flex-direction: column;">
+        <h1 style="text-decoration: underline;">JavaScript program to check number even and odd.</h1>
+        <span id="demo" style="font-size: 48px; color: coral;"></span>
+        <span id="demo2" style="font-size: 48px; color: coral;"></span>
+    </div>
+</body>
+
+<script>
+    // let a = 20;
+    // if (a % 2 == 0) {
+    //     document.write(a + ' is an even number')
+    // } else {
+    //     document.write(a + ' is an odd number')    
+    // }
+
+
+
+    let a = prompt('Enter Any number :');
+    document.getElementById('demo').innerHTML = 'Your number is ' + a;
+
+    function myFunction() {
+        let ans;
+        if (a % 2 == 0) {
+            ans = a + ' is even number.';
+        } else if (a % 2 != 0) {
+            ans = a + ' is odd number.';
+        } else {
+            ans = 'Please enter valid Number..!'
+        }
+        document.getElementById('demo2').innerHTML = ans;
+    }
+    myFunction();
+</script>
+
+</html>

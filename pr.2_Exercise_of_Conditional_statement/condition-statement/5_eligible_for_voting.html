@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .main {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .main h1 {
+            text-decoration: underline;
+        }
+
+        .main button {
+            margin-top: 1rem;
+            margin: 0 auto;
+            font-size: 28px;
+            font-weight: 900;
+            width: 100%;
+            max-width: 10rem;
+            color: #fff;
+            background-color: #000099;
+            border-radius: 40%;
+        }
+
+        .main span {
+            margin-top: 1rem;
+            color: coral;
+            font-size: 48px;
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Write a JavaScript program to decide that you eligible for voting.</h1>
+        <button onclick="myfunction()">Try it</button>
+        <span id="demo"></span>
+    </div>
+
+
+    <script>
+        function myfunction() {
+            let text;
+            let person = prompt("Please enter your age : ");
+
+            if (person >= 18) {
+                text = "You are eligible for voting."
+            } else if (person == null || person == "") {
+                text = "User cancelled the prompt.";
+            } else {
+                text = "Your age is " + person + ". So you are not eligible for voting."
+            }
+            document.getElementById("demo").innerHTML = text;
+        }
+    </script>
+</body>
+
+</html>

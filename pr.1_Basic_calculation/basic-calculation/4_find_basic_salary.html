@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find basic salary</title>
+
+    <style>
+        .main {
+            text-align: center;
+        }
+
+        h1 {
+            text-decoration: underline;
+        }
+
+        #demo {
+            font-size: 48px;
+        }
+
+        #demo2 {
+            font-size: 48px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>javascript Program to find gross salary</h1>
+        <span id="demo"></span>
+        <hr>
+        <h2 id="demo2"></h2>
+    </div>
+
+    <script>
+        function myFunction() {
+            let bs = parseInt(prompt(`Enter the Base salary : `));
+            const HRA = (10 * 100) / bs;
+            const DA = (5 * 100) / bs;
+            const TA = (8 * 100) / bs;
+
+            document.getElementById(`demo`).innerHTML = `Basic salary = ` + bs + ` , HRA = ` + HRA + ` , DA = ` + DA +
+                ` , TA = ` + TA;
+
+            let total = bs + HRA + DA + TA;
+
+            document.getElementById(`demo2`).innerHTML = total;
+        }
+        myFunction();
+    </script>
+</body>
+
+</html>

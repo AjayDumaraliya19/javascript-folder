@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+
+<body>
+    <h1>LOGIN FORM</h1>
+    <form name="myform" action="#" onsubmit="return formValidation()" method="post">
+        <div class="formdesign" id="firstname">
+            First Name : <input type="text" name="fname" id="fnam"><span class="formerror" id="firstNameError"></span>
+        </div>
+        <div class="formdesign" id="lastname">
+            Last Name : <input type="text" name="lname" id="lnam"><span class="formerror" id="lastNameError"></span>
+        </div>
+        <div class="formdesign" id="phone">
+            Mobile : <input type="tel" name="fphone" id="mobile"><span class="formerror" id="phoneError"></span>
+        </div>
+        <div class="formdesign" id="dob">
+            Date of Birth : <input type="date" name="dob" id="dobField"><span class="formerror" id="dobError"></span>
+        </div>
+        <div class="formdesign" id="email">
+            Email : <input type="email" name="femail" id="mail"><span class="formerror" id="emailError"></span>
+        </div>
+        <div class="formdesign" id="gender">
+            Gender :
+            <input type="radio" name="gender" id="gend" value="male">Male <span class="formerror"></span>
+            <input type="radio" name="gender" id="gend" value="female">Female <span class="formerror"></span>
+            <span class="formerror" id="genderError"></span>
+        </div>
+
+        <input type="submit" id="btn" class="button" value="Submit">
+
+    </form>
+
+    <!-- input all data submitted into table form -->
+    <table id="dataTable" border="1">
+        <tr>
+            <th>Name</th>
+            <th>Phone number</th>
+            <th>Date of Birth</th>
+            <th>Email</th>
+            <th>Gender</th>
+        </tr>
+    </table>
+
+    <!-- Only male's gender name is submitted in table form -->
+    <h3>Male names</h3>
+    <table id="maleNamesTable" border="1">
+        <tr>
+            <th>Name</th>
+        </tr>
+    </table>
+
+    <script>
+        var tableData = []; // Array to store the table data
+
+        function formValidation() {
+            // Declare all variables and get values
+            let firstName = document.forms['myform']['fname'].value;
+            let lastName = document.forms['myform']['lname'].value;
+            let phone = document.forms['myform']['fphone'].value;
+            let dob = document.forms['myform']['dob'].value;
+            let email = document.forms['myform']['femail'].value;
+            let gender = document.querySelector('input[name="gender"]:checked');
+
+            // Set error variables
+            let firstNameError = document.getElementById("firstNameError");
+            let lastNameError = document.getElementById("lastNameError");
+            let phoneError = document.getElementById("phoneError");
+            let dobError = document.getElementById("dobError");
+            let emailError = document.getElementById("emailError");
+            let genderError = document.getElementById("genderError");
+
+            // Clear previous errors
+            firstNameError.textContent = "";
+            lastNameError.textContent = "";
+            phoneError.textContent = "";
+            dobError.textContent = "";
+            emailError.textContent = "";
+            genderError.textContent = "";
+
+            try {
+                if (firstName === "") throw "First Name can't be empty!";
+                if (lastName === "") throw "Last Name can't be empty!";
+                if (phone === "") throw "Phone Number can't be empty!";
+                if (dob === "") throw "Date of Birth can't be empty!";
+                if (email === "") throw "Email can't be empty!";
+                if (!gender) throw "Select any gender!";
+            } catch (err) {
+                switch (err) {
+                    case "First Name can't be empty!":
+                        firstNameError.textContent = err;
+                        break;
+                    case "Last Name can't be empty!":
+                        lastNameError.textContent = err;
+                        break;
+                    case "Phone Number can't be empty!":
+                        phoneError.textContent = err;
+                        break;
+                    case "Date of Birth can't be empty!":
+                        dobError.textContent = err;
+                        break;
+                    case "Email can't be empty!":
+                        emailError.textContent = err;
+                        break;
+                    case "Select any gender!":
+                        genderError.textContent = err;
+                        break;
+                    default:
+                        console.log(err);
+                }
+
+                return false; // Prevent form submission
+            }
+
+            // Store form data in the tableData array
+            tableData.push({
+                name: firstName + " " + lastName,
+                phone: phone,
+                email: email,
+                gender: gender.value,
+                dob: dob
+            });
+
+            renderTable(tableData); // Render the table
+
+            if (gender.value === "male") {
+                var maleNamesTable = document.getElementById("maleNamesTable");
+                var maleRow = maleNamesTable.insertRow(-1);
+                var maleNameCell = maleRow.insertCell(0);
+                maleNameCell.innerHTML = firstName + " " + lastName;
+            }
+
+            // Clear the form inputs
+            document.getElementById("fnam").value = "";
+            document.getElementById("lnam").value = "";
+            document.getElementById("mobile").value = "";
+            document.getElementById("dobField").value = "";
+            document.getElementById("mail").value = "";
+            document.querySelector('input[name="gender"]:checked').checked = false;
+
+            return false; // Prevent form submission
+        }
+
+        function renderTable(data) {
+            var dataTable = document.getElementById("dataTable");
+            while (dataTable.rows.length > 1) {
+                dataTable.deleteRow(1);
+            }
+
+            data.map(function (item) {
+                var row = dataTable.insertRow(-1);
+                var nameCell = row.insertCell(0);
+                var phoneCell = row.insertCell(1);
+                var dobCell = row.insertCell(2);
+                var emailCell = row.insertCell(3);
+                var genderCell = row.insertCell(4);
+
+                nameCell.innerHTML = item.name;
+                phoneCell.innerHTML = item.phone;
+                dobCell.innerHTML = item.dob;
+                emailCell.innerHTML = item.email;
+                genderCell.innerHTML = item.gender;
+            });
+        }
+    </script>
+</body>
+</html>

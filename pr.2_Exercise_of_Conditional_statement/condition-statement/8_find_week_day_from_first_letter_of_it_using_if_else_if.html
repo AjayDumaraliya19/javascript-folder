@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .main {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .main h1 {
+            text-decoration: underline;
+        }
+
+        .main button {
+            margin-top: 1rem;
+            margin: 0 auto;
+            font-size: 28px;
+            font-weight: 900;
+            width: 100%;
+            max-width: 10rem;
+            color: #fff;
+            background-color: #000099;
+            border-radius: 40%;
+        }
+
+        .main span {
+            margin-top: 1rem;
+            color: coral;
+            font-size: 48px;
+            font-weight: 600;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="main">
+        <h1>JavaScript program to find month name from month number using switch case.</h1>
+        <button onclick="myFunction()">Click here</button>
+        <span id="demo"></span>
+    </div>
+
+
+    <script>
+        function myFunction() {
+            let day;
+            let text = prompt('Enter first letter of day:');
+
+            if (text == "s" || text == "S") {
+                day = 'Sunday';
+            } else if (text == "m" || text == "M") {
+                day = 'monday';
+            } else if (text == "T" || text == "t") {
+                day = 'Tuesday';
+            } else if (text == "w" || text == "W") {
+                day = 'Wendesday';
+            } else if (text == "TH" || text == "th") {
+                day = 'Thursday';
+            } else if (text == "f" || text == "F") {
+                day = 'Friday';
+            } else if (text == "Sa" || text == "sa") {
+                day = 'Saturday';
+            } else {
+                day = 'Please Enter valid leter.';
+            }
+
+            document.getElementById('demo').innerHTML = day;
+        }
+    </script>
+
+
+     
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operators</title>
+</head>
+
+<body>
+
+    <script>
+        // Assignment Operators (=, +=, -=, *=, /=, %=, **=)
+        console.log(`Assignment operators.`)
+        let x = 10,
+            y = 20,
+            z = 30;
+
+        x += y;
+        console.log(`new x =`, x); // 30
+        z -= y;
+        console.log(`new z =`, z); //10
+        y *= z;
+        console.log(`new y =`, y); // 200
+        y /= z;
+        console.log(`new y =`, y); // 20
+        x %= y;
+        console.log(`new x =`, x); // 10
+        z **= y;
+        console.log(`new z =`, z); // (10)square of 10 
+
+        // Arithmetic Operators (+, ++, -, --, *, **, /, %)
+        console.log(`Arithmatic Operators.`);
+        let a = 3,
+            b = 2;
+        let result;
+
+        result = a + b;
+        console.log(`a + b =`, result); // 5
+        result++;
+        console.log(`result++`, result); // 6
+        result = a - b;
+        console.log(`a - b =`, result); // 1
+        result--;
+        console.log(`result--`, result); // 0
+        result = a * b;
+        console.log(`a * b =`, result); // 6
+        result = a ** b;
+        console.log(`a ** b =`, result); // 9
+        result = a / b;
+        console.log(`a / b =`, result); // 1.5
+        result = a % b;
+        console.log(`a % b =`, result); // 1
+
+        // Comparison Operators (==, ===, !=, !==, <, >, <=, >=, ?(ternary))
+        let tex1 = 10,
+            tex2 = 20;
+        let text;
+
+        text = (tex1 == tex2);
+        console.log(text); // flase
+        text = (tex1 === tex2);
+        console.log(text); // flase
+        text = (tex1 != tex2);
+        console.log(text); // ture
+        text = (tex1 !== tex2);
+        console.log(text); // true
+        text = (tex1 < tex2);
+        console.log(text); // true
+        text = (tex1 > tex2);
+        console.log(text); // flase
+        text = (tex1 <= tex2);
+        console.log(text); // true
+        text = (tex1 >= tex2);
+        console.log(text); // flase
+        text = (tex1 < tex2) ? "ture" : "false";
+        console.log(text); // true
+
+        // String Operators()
+        let d = "Ajay",
+            e = "Dumaraliya";
+        let merge;
+        merge = d + " " + e;
+        console.log(merge);
+
+        // Logical Operators()
+        let a1 = 10,
+            a2 = 11;
+        if (a1<20 && a2>10) {
+            console.log(`Hello world!`);
+        } else {
+            console.log(`Good job`);
+        }
+
+    </script>
+
+</body>
+
+</html>

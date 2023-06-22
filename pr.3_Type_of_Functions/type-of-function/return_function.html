@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            text-align: center;
+            justify-content: center;
+        }
+
+        button {
+            font-size: 48px;
+            background: #000;
+            color: #fff;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <!-- <button onclick="myFunction()">Click here</button> -->
+        <button onclick="myFunction1()">Click</button>
+        <table>
+            <tbody id="demo1">
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function myFunction() {
+            let text;
+            let a = prompt("Please enter your age : ");
+
+            if (a >= 18) {
+                text = "You are eligible for voting."
+            } else if (a == null || a == "") {
+                text = "You are cancelled the prompt. Please refresh it and Enter your Age..!";
+            } else {
+                text = "Your age is " + a + ". So you are not eligible for voting."
+            }
+            return text;
+            document.write(`heeyyyyy`);
+        }
+
+        function myFunction1() {
+            document.getElementById('demo1').innerHTML = myFunction();
+        }
+    </script>
+</body>
+
+</html>

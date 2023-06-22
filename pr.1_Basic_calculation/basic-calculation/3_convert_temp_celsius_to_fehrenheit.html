@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>convet temp celsius to fehrenheit</title>
+    <style>
+        .main {
+            text-align: center;
+        }
+
+        h1 {
+            text-decoration: underline;
+        }
+
+        #demo {
+            font-size: 48px;
+        }
+
+        #demo2 {
+            font-size: 48px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Write a javascript program to convert temperature from degree Celsius to Fahrenheit.</h1>
+        <span id="demo"></span>
+        <hr>
+        <h2 id="demo2"></h2>
+    </div>
+
+    <script>
+        function myFunction() {
+            let c = parseInt(prompt('Entern celsius value of temprature : '));
+
+            document.getElementById('demo').innerHTML = 'Celsius value : ' + c;
+
+            let temp = ((parseInt(c) * 9) / 5) + 32;
+
+            document.getElementById('demo2').innerHTML = 'Celsius value : ' + c + ' convert into Fehrenheit : ' + temp;
+        }
+
+        myFunction();
+    </script>
+</body>
+
+</html>

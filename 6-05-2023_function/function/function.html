@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function types</title>
+</head>
+
+<body>
+    <h1>Type of functions</h1>
+    <!-- onclick event -->
+    <button onclick="myFunction()">Click here</button>
+
+    <script>
+        //non parameterise function...
+        function myFunction() {
+            let x = 10;
+            let y = 20;
+
+            console.log(`line 21 : X + Y =`, x + y);
+        }
+
+        //perameterised function...
+        function myPara(a, b) {
+            console.log(`line 26 : A - B =`, a - b);
+        }
+        myPara(10, 3);
+
+        //non parameterised and return function...
+        let temp;
+
+        function myReturn() {
+            let x = 10;
+            let y = 20;
+            temp = x + y;
+            return temp;
+        }
+        myReturn();
+        console.log(`line41`, temp);
+
+        //perameterised and return function...
+        let result;
+
+        function myReturnPara(a, b, c, d) {
+            result = a + b + c + d;
+            return result;
+
+        }
+        myReturnPara(10, 20, 12, 4);
+        console.log(`line 52 : A + B + C + D =`, result);
+    </script>
+</body>
+
+</html>
