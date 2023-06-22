@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string</title>
+</head>
+
+<body>
+    <h1>string method</h1>
+
+    <script>
+        let a = "apple, banana, kivi, orange";
+        document.write(a.length + "<br>");
+        let slice = a.slice(3);
+        let part = a.slice(-12);
+        document.write(slice + "<br>");
+        document.write(part + "<br>");
+
+
+
+        document.write(a.substring(7, 13) + "<br>");
+        document.write(a.substr(-6));
+
+        let s2 = "                my name is ajay Dumaraliya            "
+        document.write(s2.replace("khushal", "khush" + "<br>"));
+        document.write(s2.replaceAll("khush", "khushal" + "<br>"));
+
+        let s = a.concat("", s2);
+        document.write(s + "<br>");
+
+        document.write(s2.length + "<br>");
+        document.write(s2.trim() + "<br>");
+
+        document.write(s2.length + "<br>");
+        let ts = s2.trimStart();
+        document.write(ts.length + "<br>");
+        let te = s2.trimEnd();
+        document.write(te.length + "<br>");
+
+        let n = "8"
+        document.write(n.padStart("<br>" + 3, "x"));
+        document.write(n.padEnd("<br>" + 4, "0"));
+
+        document.write(s2.charAt(25) + "<br>");
+        document.write(s2.charCodeAt(0) + "<br>");
+
+
+        document.write(s2.toUpperCase() + "<br>");
+        document.write(s2.toLowerCase() + "<br>");
+
+        const myArray = a.split(",");
+        document.write(myArray[5]);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested functions</title>
+</head>
+<style>
+    .main {
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    button {
+        margin: 15px auto;
+        font-size: 28px;
+        display: block;
+        color: #fff;
+        padding: 10px;
+        font-weight: 700;
+        border: 2px solid #0012ff;
+        background: #5141b5a6;
+        border-radius: 10px;
+    }
+
+    span.text {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 24px;
+    }
+
+    p span.bold {
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    .data p {
+        font-size: 28px;
+        margin: 2px;
+        text-decoration: underline;
+    }
+
+    input {
+        font-size: 24px;
+        background: #000;
+        color: #fff;
+        border-radius: 10px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <span class="text">Please click button for an action..!</span>
+        <hr>
+        <div class="data">
+            <input type="text" id="num1" placeholder="Enter first number">
+            <p id="value1"></p>
+        </div>
+        <div class="data">
+            <input type="text" id="num2" placeholder="Enter second number">
+            <p id="value2"></p>
+        </div>
+        <p>Sumation of two number : <span id="sum" class="bold"></span></p>
+        <div class="data">
+            <input type="text" id="num3" placeholder="Enter third number">
+            <p id="value3"></p>
+        </div>
+        <p>Substraction of two number : <span id="sub" class="bold"></span></p>
+        <div class="data">
+            <input type="text" id="num4" placeholder="Enter Forth number">
+            <p id="value4"></p>
+        </div>
+        <p>Multiplication of two number : <span id="mul" class="bold"></span></p>
+        <div class="data">
+            <input type="text" id="num5" placeholder="Enter Fifth number">
+            <p id="value5"></p>
+        </div>
+        <p>Division of two number : <span id="div" class="bold"></span></p>
+
+        <button onclick="myFunction()">click here</button>
+
+
+
+
+        <!-- =========== script 1 data ============= -->
+        <!-- <p>Sumation of two number : <span id="demo" class="bold"></span></p>
+        <p>Substraction of two number : <span id="demo1" class="bold"></span></p>
+        <p>Multiplication of two number : <span id="demo2" class="bold"></span></p>
+        <p>Division of two number : <span id="demo3" class="bold"></span></p>
+        <p>Percentage of two number : <span id="demo4" class="bold"></span></p>
+        <p>Result of upper all values Sumation : <span id="demo5" class="bold"></span></p>
+        <p>Result of upper all values Substraction : <span id="demo6" class="bold"></span></p>
+        <p>Result of upper all values Multiplication : <span id="demo7" class="bold"></span></p>
+        <p>Result of upper all values Division : <span id="demo8" class="bold"></span></p>
+        <p>Result of total operation : <span id="demo9" class="bold"></span></p> -->
+    
+    
+    </div>
+
+
+    <!-- <script type="text/javascript">
+        function myFunction() {
+            var a = parseInt(prompt('Enter the number for sumation value A : ')); //4
+            var b = parseInt(prompt('Enter the number for sumation value B : ')); //5
+
+            function myFunctionSum() {
+                //Sumation of user given two number...
+                var sum = a + b; //9
+                document.getElementById('demo').innerHTML = `${a} + ${b} = ` + sum;
+                var Sumation = sum; //9
+
+
+                //Subtraction of number...
+                function myFunctionSub() {
+                    var c = parseInt(prompt('Enter number for Substraction value C : '));
+                    // var c = 4;
+                    var sub = Sumation - c; //5
+                    document.getElementById('demo1').innerHTML = `${Sumation} - ${c} = ` + sub;
+                    var Substraction = sub; //5
+
+                    //Multiplication of number...
+                    function myFunctionMul() {
+                        var d = parseInt(prompt('Enter number for Multiplication value D : '));
+                        // var d = 6;
+                        var mul = Substraction * d; //30
+                        document.getElementById('demo2').innerHTML = `${Substraction} * ${d} = ` + mul;
+                        var Multiplication = mul; //30
+
+                        //Division of number...
+                        function myFunctionDiv() {
+                            var e = parseInt(prompt('Enter number for Division value E : '));
+                            // var e = 2;
+                            var div = (Multiplication / e); //15
+                            document.getElementById('demo3').innerHTML = `${Multiplication} / ${e} = ` + div;
+                            var Division = div; //15
+
+
+                            // percentage of number...
+                            function myFunctionReminder() {
+                                var f = parseInt(prompt('Enter number for Percentage value F : '));
+                                // var f = 2;
+                                var percentage = (((Division - f) / ((Division + f) / 2)) * 100); //152.9411
+                                // document.write(percentage);
+                                document.getElementById('demo4').innerHTML = `${Division} and ${f} = ` + percentage +
+                                    " %";
+
+
+                                //Result of all arithmatic operation values sumation...
+                                function myResultsSum() {
+                                    var resultsum = Sumation + Substraction + Multiplication + Division +
+                                    percentage; //211.9411
+                                    document.getElementById(`demo5`).innerHTML =
+                                        `${Sumation} + ${Substraction} + ${Multiplication} + ${Division} + ${percentage} is : ` +
+                                        resultsum;
+
+
+                                    //Result of all arithmatic operation values substraction...
+                                    function myResultsSub() {
+                                        var resultsub = Sumation - Substraction - Multiplication - Division -
+                                        percentage; //-193.9411
+                                        document.getElementById(`demo6`).innerHTML =
+                                            `${Sumation} - ${Substraction} - ${Multiplication} - ${Division} - ${percentage} is : ` +
+                                            resultsub;
+
+
+                                        //Result of all arithmatic operation values multiplication...
+                                        function myResultsMul() {
+                                            var resultmul = Sumation * Substraction * Multiplication * Division *
+                                                percentage; //3097057.275
+                                            document.getElementById(`demo7`).innerHTML =
+                                                `${Sumation} * ${Substraction} * ${Multiplication} * ${Division} * ${percentage} is : ` +
+                                                resultmul;
+
+
+                                            //Result of all arithmatic operation values division...
+                                            function myResultsDiv() {
+                                                var resultdiv = Sumation / Substraction / Multiplication / Division /
+                                                    percentage; //2.6143
+                                                document.getElementById(`demo8`).innerHTML =
+                                                    `${Sumation} / ${Substraction} / ${Multiplication} / ${Division} / ${percentage} is : ` +
+                                                    resultdiv;
+
+
+                                                //Total-result of all upper total operation...
+                                                function myTotal() {
+                                                    var total = resultsum + resultsub + resultmul +
+                                                    resultdiv; //3097077.8803
+                                                    document.getElementById(`demo9`).innerHTML =
+                                                        `${resultsum} + ${resultsub} + ${resultmul} + ${resultdiv} is : ` +
+                                                        total;
+                                                }
+                                                myTotal();
+                                            }
+                                            myResultsDiv();
+                                        }
+                                        myResultsMul();
+                                    }
+                                    myResultsSub();
+                                }
+                                myResultsSum();
+                            }
+                            myFunctionReminder();
+                        }
+                        myFunctionDiv();
+                    }
+                    myFunctionMul();
+                }
+                myFunctionSub();
+            }
+            myFunctionSum();
+        }
+    </script> -->
+
+
+    <script>
+        document.querySelector(`button`).onclick = function () {
+            const a = parseInt(document.querySelector(`#num1`).value);
+            document.querySelector(`#value1`).innerHTML = `First value is : ` + a;
+
+            const b = parseInt(document.querySelector(`#num2`).value);
+            document.querySelector(`#value2`).innerHTML = `Second value is : ` + b;
+            var sum = a + b;
+            document.getElementById(`sum`).innerHTML = `${a} + ${b} = ` + sum;
+            var n1 = sum;
+
+            const c = parseInt(document.querySelector(`#num3`).value);
+            document.querySelector(`#value3`).innerHTML = `Third value is : ` + c;
+            var sub = n1 - c;
+            document.getElementById(`sub`).innerHTML = `${n1} - ${c} = ` + sub;
+            var n2 = sub;
+
+            const d = parseInt(document.querySelector(`#num4`).value);
+            document.querySelector(`#value4`).innerHTML = `Forth value is : ` + d;
+            var mul = n2 * d;
+            document.getElementById(`mul`).innerHTML = `${n2} * ${d} = ` + mul;
+            var n3 = mul;
+
+            const e = parseInt(document.querySelector(`#num5`).value);
+            document.querySelector(`#value5`).innerHTML = `Firth value is : ` + e;
+            var div = n3 / e;
+            document.getElementById(`div`).innerHTML = `${n3} / ${e} = ` + div;
+            var n4 = div;
+        }
+    </script>
+</body>
+
+</html>

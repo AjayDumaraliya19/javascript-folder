@@ -1,0 +1,10 @@
+<script>
+    fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response => response.json())
+        .then(json => localStorage.setItem("store",JSON.stringify(json)))
+
+        let data=JSON.parse(localStorage.getItem("store"))
+        console.log(data);
+        data.push({hello:"you"})
+        console.log(data);
+</script>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>T6 - 1 </title>
+</head>
+
+<body>
+    <style>
+        body,
+        p {
+            background: #000;
+            color: aliceblue;
+            text-align: center;
+            margin: 20px;
+            font-size: 30px;
+            text-shadow: 18px -9px 20px;
+        }
+    </style>
+    
+    <div>
+        <button onclick="conb()"
+            style=" margin: 40px auto; display: flex; padding: 20px; font-size:24px; background-color: azure; font-weight: 800;">
+            constructor </button>
+        <hr>
+
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+        <p id="demo4"></p>
+        <hr>
+        <p id="demo5"></p>
+
+    </div>
+</body>
+
+<script>
+    function conb() {
+        let fName = prompt("Enter your Name :- ");
+        let lName = prompt("Enter your SurName :- ");
+        let age = prompt("Enter your Age :- ");
+        let work = prompt("Enter your Work :- ");
+
+        function con(fName, lName, age, work) {
+            this.Name = fName;
+            this.SurName = lName;
+            this.Age = age;
+            this.Work = work;
+        }
+        let conNew = new con(fName, lName, age, work);
+
+        // add one more value
+        conNew.lnguage = "Gujrati"
+
+        document.getElementById("demo1").innerHTML = "Your Name :- " + conNew.Name;
+        document.getElementById("demo2").innerHTML = "Your SurName :- " + conNew.SurName;
+        document.getElementById("demo3").innerHTML = "Your Age :- " + conNew.Age;
+        document.getElementById("demo4").innerHTML = "Your Work :- " + conNew.Work;
+        document.getElementById("demo5").innerHTML = "This is one add value is ==> :- " + conNew.lnguage;
+    }
+</script>
+
+</html>

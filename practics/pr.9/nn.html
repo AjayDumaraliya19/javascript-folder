@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Mouseover Effects</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      border: 1px solid black;
+      display: inline-block;
+      margin: 10px;
+      transition: all 0.3s ease;
+      /* Add transition property */
+      background-size: cover;
+    }
+  </style>
+  <script>
+    function changeSize(element) {
+      var width = Math.floor(Math.random() * 300) + 100;
+      var height = Math.floor(Math.random() * 300) + 100;
+      element.style.width = width + "px";
+      element.style.height = height + "px";
+    }
+
+    function changeColor(element) {
+      var randomColor = "#" + Math.floor(Math.random() * 123456).toString(16);
+      element.style.backgroundColor = randomColor;
+    }
+
+    function changeImage(element) {
+      var images = [
+        "img1.jpg",
+        "img2.jpg",
+        "img3.jpg",
+        "img4.jpg",
+        "img5.jpg",
+        "img6.jpg",
+        "img7.jpg",
+        "img8.jpg",
+        "img9.jpg"
+      ];
+      var randomIndex = Math.floor(Math.random() * images.length);
+      var randomImage = images[randomIndex];
+      element.style.backgroundImage = "url('" + randomImage + "')";
+    }
+
+    function resetSize(element) {
+      element.style.width = "200px";
+      element.style.height = "200px";
+    }
+
+    function resetColor(element) {
+      element.style.backgroundColor = "white";
+    }
+
+    function resetImage(element) {
+      element.style.backgroundImage = "none";
+    }
+  </script>
+</head>
+
+<body>
+  <div class="box" onmouseover="changeSize(this)" onmouseout="resetSize(this)"></div>
+  <div class="box" onmouseover="changeColor(this)" onmouseout="resetColor(this)"></div>
+  <div class="box" onmouseover="changeImage(this)" onmouseout="resetImage(this)"></div>
+</body>
+
+</html>

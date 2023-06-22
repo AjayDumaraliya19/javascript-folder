@@ -1,0 +1,422 @@
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>creating oop concept</title>
+</head>
+<style>
+    h1{
+        text-align: center;
+        color: red;
+        font-size: 50px;
+    }
+    h2,p{
+        text-align: center;
+    }
+    .main{
+        width: 100%;
+        text-align: center;
+    }
+    button{
+        color: #fff;
+        background-color: #000;
+        border-radius: 10px;
+        padding: 10px 30px;
+    }
+</style>
+<body>
+    <h1>creating oop concept</h1>
+    <div class="main">
+        <button onclick="oopsmain()">Click to Run</button>
+    </div>
+    <hr/>
+    <h2 id="details"></h2>
+    <p id="extra"></p>
+    
+
+    <script type="text/javascript">
+        // main function invoke which call in button
+       function oopsmain(){
+            // user function default value with this constructor
+            function user(first,last,mobile,age,dob){
+                this.firstname = first;
+                this.lastname = last;
+                this.mobilenumber = mobile;
+                this.userage = age;
+                this.userdob = dob;
+            }
+
+            // user data input
+            const fatherName = new user("john","Doe",7894561230,61,"21-july-2006");
+            // new property added with new keyword
+            fatherName.lang = "English"
+            document.getElementById('extra').innerHTML = "Extra Value Added Successfully !!";
+            console.log(fatherName)
+            let father = "";
+            // for In loop for printing object
+            for(let a in fatherName){
+                father += fatherName[a] + "<br>";
+            }
+            // printing objecct
+            document.getElementById('details').innerHTML = father;
+       }
+    </script>
+</body>
+</html>  -->
+
+
+
+<!-- <!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<style>
+    html {
+        height: 100%;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background: linear-gradient(#141e30, #243b55);
+    }
+
+    .login-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 400px;
+        padding: 40px;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, .5);
+        box-sizing: border-box;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+        border-radius: 10px;
+    }
+
+
+    .login-box h2 {
+        padding: 0;
+        color: #fff;
+        text-align: center;
+    }
+
+    .login-box p {
+        margin: 0 0 80px;
+        padding: 0;
+        color: #fff;
+        text-align: center;
+        font-size: 20px;
+        color: #03e9f4;
+    }
+
+    .login-box .user-box {
+        position: relative;
+    }
+
+    .login-box .user-box input {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: 1px solid #fff;
+        outline: none;
+        background: transparent;
+    }
+
+    .login-box .user-box label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        pointer-events: none;
+        transition: .5s;
+    }
+
+    .login-box .user-box input:focus~label,
+    .login-box .user-box input:valid~label {
+        top: -20px;
+        left: 0;
+        color: #03e9f4;
+        font-size: 12px;
+    }
+
+    .login-box form .btn-main {
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        color: #03e9f4;
+        font-size: 16px;
+        text-decoration: none;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: .5s;
+        margin-top: 40px;
+        letter-spacing: 4px
+    }
+
+    .login-box form .btn {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: #fff;
+    }
+
+    .login-box .btn-main:hover {
+        background: #03e9f4;
+        color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #03e9f4,
+            0 0 25px #03e9f4,
+            0 0 50px #03e9f4,
+            0 0 100px #03e9f4;
+    }
+
+    .login-box .btn-main span {
+        position: absolute;
+        display: block;
+    }
+
+    .login-box .btn-main span:nth-child(1) {
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #03e9f4);
+        animation: btn-anim1 1s linear infinite;
+    }
+
+    @keyframes btn-anim1 {
+        0% {
+            left: -100%;
+        }
+
+        50%,
+        100% {
+            left: 100%;
+        }
+    }
+
+    .login-box .btn-main span:nth-child(2) {
+        top: -100%;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(180deg, transparent, #03e9f4);
+        animation: btn-anim2 1s linear infinite;
+        animation-delay: .25s
+    }
+
+    @keyframes btn-anim2 {
+        0% {
+            top: -100%;
+        }
+
+        50%,
+        100% {
+            top: 100%;
+        }
+    }
+
+    .login-box .btn-main span:nth-child(3) {
+        bottom: 0;
+        right: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(270deg, transparent, #03e9f4);
+        animation: btn-anim3 1s linear infinite;
+        animation-delay: .5s
+    }
+
+    @keyframes btn-anim3 {
+        0% {
+            right: -100%;
+        }
+
+        50%,
+        100% {
+            right: 100%;
+        }
+    }
+
+    .login-box .btn-main span:nth-child(4) {
+        bottom: -100%;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(360deg, transparent, #03e9f4);
+        animation: btn-anim4 1s linear infinite;
+        animation-delay: .75s
+    }
+
+    @keyframes btn-anim4 {
+        0% {
+            bottom: -100%;
+        }
+
+        50%,
+        100% {
+            bottom: 100%;
+        }
+    }
+</style>
+
+<body>
+
+    <div class="login-box">
+        <h2>Form Validation</h2>
+        <p>Vraj patoliya</p>
+        <form action="post" name="myform" onsubmit="return formvalidate()">
+            <div class="user-box">
+                <input type="text" name="fname" />
+                <label>First Name</label>
+            </div>
+            <div class="user-box">
+                <input type="tel" name="mnum" />
+                <label>Mobile Number</label>
+            </div>
+            <div class="btn-main">
+                <input type="submit" class="btn" value="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span></div>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        function formvalidate() {
+            let firstname = document.forms["myform"]["fname"].value;
+            let mobilenum = document.forms["myform"]["mnum"].value;
+
+            if (firstname.length >= 4) {
+                alert("Please Enter Valid Name......");
+                return false;
+            } else if (mobilenum.length != 10) {
+                alert("Please Enter Valid Mobile Number......");
+                return false;
+            } else {
+                alert("Form Was Submitted Successfully !!");
+                return false;
+            }
+        }
+    </script>
+</body>
+</body>
+
+</html> -->
+
+
+
+ <!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Constrcator</title>
+</head>
+
+<body>
+    <h1>Constractor</h1>
+    <script>
+
+        function Emp(Name, age, post) { //using this keyword
+            this.firstName = Name;
+            this.Age = age;
+            this.Post = post;
+        }
+
+        const detail = new Emp("nishant", 25, "Manager"); //using new keyword
+        const detail1 = new Emp("binal", 23, "Sales");
+        detail.city = 'surat'; //add new key 
+
+        console.log(detail) // full object get
+
+        console.log(detail.Post) // particular value get
+        console.log("detail1-firstName:", detail1.firstName) // particular value get
+        console.log("detail-city:", detail.city) // particular value get
+
+        //using for in  array get object
+        let array = [{ no: 100, name: 'binal', age: 50 },
+        { no: 101, name: 'geeta', age: 58 }];
+
+        for (let x in array) {
+            console.log(array[x])
+        }
+
+        //create new object
+        const Food = {
+            food: "pizza",
+            price: 205,
+            quality: "good",
+            set avai(avai) {
+                this.available = avai;
+            }
+        };
+        // Set an object property using a setter
+        Food.avai = "yes";
+        console.log("Food Avaiblity: " + Food.available)
+
+        //using for in object get
+        for (let key in Food) {
+            console.log("Food deatil :" + key + ":" + Food[key])
+        }
+
+        // Display data from the object using a getter
+        const Food1 = {
+            food: "pizza",
+            price: 205,
+            quality: "good",
+            available: "yes",
+            get fooddetail() {
+               return this.food + " " + this.price;
+            }
+        }
+        console.log("🚀 ~ file: constractor.html:64 ~ getfooddetail :", Food1.fooddetail)
+
+    </script>
+</body>
+
+</html> 
+
+<!-- <script>
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+  
+    Object.defineProperty(this, 'isAdult', {
+      get: function() {
+        return this.age >= 18;
+      }
+    });
+  }
+  
+  Person.prototype.greet = function() {
+    return "Hello, my name is " + this.name + "!";
+  };
+  
+  // Creating a new instance of Person using the 'new' keyword
+  var john = new Person("John Doe", 25);
+  
+  console.log(john.name); // Output: John Doe
+  console.log(john.age); // Output: 25
+  console.log(john.isAdult); // Output: true
+  
+  john.city = "New York"; // Adding a new property to the object
+  
+  console.log(john.city); // Output: New York
+  
+  console.log(john.greet()); // Output: Hello, my name is John Doe!
+</script> -->
