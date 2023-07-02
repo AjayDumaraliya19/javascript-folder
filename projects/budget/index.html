@@ -4,62 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Budget</title>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="css/all.min.css
-    "/>
-    <!-- Googal Fonts  -->
-    <link rel="stylesheet" href="css/font.css" />
-    <!-- StyleSheet -->
+    <title>Budget Application</title>
+
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/style.css" />
+
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="container">
-            <div class="sub-container">
-                <!-- Budget -->
-                <div class="total-amount-container">
-                    <h3>Budget</h3>
-                    <p class="hide error" id="budget-error">Value cannot be empty or negative </p>
-                    <input type="number" id="total-amount" placeholder="Enter Total total-amount">
-                    <button class="submit" id="total-amount-button">Set Budget</button>
+    <div class="container">
+        <!-- ===== Upper section coding ===== -->
+        <div class="row">
+            <div class="col-12 Budget_value">
+                <div class="main_div">
+                    <h1 class="main_heading">Budget Application</h1>
+                    <div class="row">
+                        <div class="col-5 budget_set_value">
+                            <form class="form">
+                                <h5 class="heading">Budget heading</h5>
+                                <input type="number" placeholder="Enter budget" class="form-control" id="budget">
+                                <button class="btn" id="budget-btn">Set Budget</button>
+                            </form>
+                        </div>
+                        <div class="col-1"></div>
+                        <div class="col-6 product_set_value">
+                            <form class="form">
+                                <h5 class="heading">Budget expance</h5>
+                                <input type="text" placeholder="Enter Product title" class="form-control" id="title">
+                                <input type="number" placeholder="Enter Product cost" class="form-control" id="cost">
+                                <button class="btn" id="product-btn">Set Product</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
 
-                <!--Expenditure -->
-                <div class="user-amount-container">
-                    <h3>Expenses</h3>
-                    <p class="hide error">Value cannot be empty</p>
-                    <input type="text" calss="product-title" id="product-title" placeholder="Enter Title of Product">
-                    <input type="number" id="user-amount" placeholder="Enter Cost of Product">
-                    <button class="submit" id="check-amount">Check Amount</button>
-                </div>
-            </div>
-            <!-- Output -->
-            <div class="output-container flex-space">
-                <div>
-                    <p>Total Budget</p>
-                    <span id="amount">0</span>
-                </div>
-                <div>
-                    <p>Expenses</p>
-                    <span id="expenditure-value">0</span>
-                </div>
-                <div>
-                    <p>Balance</p>
-                    <span id="Balance-amount">0</span>
+        <!-- ===== Middle section coding ===== -->
+        <div class="row">
+            <div class="col-12 main_middle">
+                <div class="row ">
+                    <div class="col-4 middle_total">
+                        <h5>Totale budget</h5>
+                        <p id="total-budget">00</p>
+                    </div>
+                    <div class="col-4 middle_total">
+                        <h5>Totale Expence</h5>
+                        <p id="expence">00</p>
+                    </div>
+                    <div class="col-4 middle_total">
+                        <h5>Totale Balance</h5>
+                        <p id="balance">00</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- List -->
-        <div class="list">
-            <h3>Expenses List</h3>
-            <div class="list-container" id="list"> </div>
+
+        <!-- ===== List section coding ===== -->
+        <div class="row list_section">
+            <div class="col-12 main_list">
+                <div id="expence-list"></div>
+            </div>
         </div>
+
     </div>
 
+    <script src="js/index.js"></script>
     <script src="js/all.min.js"></script>
-    <script src="js/script.js"></script>
 </body>
 
 </html>
