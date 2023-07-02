@@ -1,27 +1,3 @@
-// Heading text-color change using timer-interval
-// let textColorIndex = 0;
-// const textColor = ['black', 'aqua', 'gray', 'green', 'lime', 'maroon', 'navy', 'olive', 'orange', 'purple', 'red', 'silver', 'teal', 'white', 'yellow'];
-
-function colorChange() {
-    let colorCodes = "0123456789ABCDEF";
-    let code = "#";
-    for (x = 0; x < 6; x++) {
-        code += colorCodes[Math.floor(Math.random() * 16)]
-        return code;
-    }
-    const textTag = document.getElementById("heading");
-    textTag.style.color = "code";
-}
-setInterval(colorChange, 500);
-
-
-// function colorChange() {
-//     const textTag = document.getElementById("heading");
-//     textTag.style.color = textColor[textColorIndex];
-//     textColorIndex = (textColorIndex + 1) % textColor.length;
-// }
-// setInterval(colorChange, 500);
-
 // Click on the add button and action added in the bottom table
 document.querySelector('#push').onclick = addTask;
 
@@ -56,12 +32,14 @@ function addTask() {
     const deleteButton = taskElement.querySelector(".delete");
     const undoButton = taskElement.querySelector(".undo");
 
+    // delete button function
     deleteButton.onclick = function () {
         const currentTask = taskElement;
         const taskName = currentTask.querySelector("#taskname").textContent;
         deleteButton.style.display = "none";
         undoButton.style.display = "inline-block";
 
+        // Set time 3 sec wait
         let secondsLeft = 3;
         const timer = setInterval(function () {
             undoButton.textContent = `Undo (${secondsLeft--}s)`;
@@ -73,6 +51,7 @@ function addTask() {
             }
         }, 1000);
 
+        // Undo button function
         undoButton.onclick = function () {
             clearInterval(timer);
             undoButton.style.display = "none";
