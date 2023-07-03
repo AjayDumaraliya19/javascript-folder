@@ -1,0 +1,84 @@
+/* css property */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #2D4356, #EAB2A0);
+}
+
+.container {
+    width: 900px;
+    margin: 3rem auto;
+    padding: 20px;
+    background-color: #A76F6F;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.input-label {
+    margin-bottom: 15px;
+}
+
+h1 {
+    margin: 1.2rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.heading {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+input[type="number"],
+input[type="range"] {
+    font-size: 1.2rem;
+    width: 100%;
+    margin: 10px 0;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: rgba(105, 64, 64, 0.8);
+}
+
+span {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #fff;
+}
+
+button {
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    line-height: 2;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+}
