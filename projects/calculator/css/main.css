@@ -4,6 +4,9 @@
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+body{
+    background: #337440;
+}
 
 .app {
     display: flex;
@@ -13,7 +16,7 @@
 }
 
 .calculator {
-    background-color: #22252d;
+    background-color: #030c26;
     width: 100%;
     max-width: 375px;
     min-height: 640px;
@@ -57,7 +60,7 @@
 }
 
 .keys {
-    background-color: #292d36;
+    background-color: #050b1b;
     padding: 1.5rem;
     border-radius: 1.5rem 1.5rem 0 0;
     display: grid;
